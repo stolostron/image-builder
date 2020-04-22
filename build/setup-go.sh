@@ -9,6 +9,7 @@ yum install -y \
     gpgme \
     git \
     hostname \
+    java-11-openjdk-headless \
     lsof \
     make \
     openssl \
@@ -31,6 +32,13 @@ cd /opt/tree/tree-1.8.0
 make
 make install
 rm -rf /opt/tree
+
+# Install sonar scanner
+cd /opt
+wget --progress=dot:mega https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip
+unzip sonar-scanner-cli-4.2.0.1873-linux.zip
+rm sonar-scanner-cli-4.2.0.1873-linux.zip
+mv sonar-scanner-4.2.0.1873-linux sonar
 
 # Install go
 mkdir -p /go/{bin,pkg,src} /opt/go

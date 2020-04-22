@@ -6,7 +6,7 @@ ENV GOPATH=/go \
     GOARCH=amd64 \
     GOPROXY=direct \
     GOSUMDB=off \
-    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin
 
 COPY build/setup-go.sh /
 
