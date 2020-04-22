@@ -8,41 +8,6 @@ ENV GOPATH=/go \
     GOSUMDB=off \
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin
 
-RUN yum install -y \
-    bc \
-    file \
-    findutils \
-    gcc \
-    gpgme \
-    git \
-    hostname \
-    lsof \
-    make \
-    openssl \
-    openssl-devel \
-    socat \
-    systemd-devel \
-    tar \
-    util-linux \
-    wget \
-    which \
-    zip \
- && yum clean all \
- && mkdir -p /go/{bin,pkg,src} /build-harness /opt/{go,tree} \
- && cd /opt/tree \
- && wget http://mama.indstate.edu/users/ice/tree/src/tree-1.8.0.tgz \
- && tar xf tree-1.8.0.tgz \
- && cd /opt/tree/tree-1.8.0 \
- && make \
- && make install \
- && cd /opt/go \
- && wget --progress=dot:mega https://dl.google.com/go/go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz \
- && tar -C /usr/local -xzf go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz \
- && rm go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz \
- && cd /build-harness \
- && git clone https://github.com/cloudposse/build-harness.git \
- && git clone https://github.com/open-cluster-management/build-harness-extensions.git \
- && rm -rf build-harness/.git \
- && rm -rf build-harness-extensions/.git \
- && rm -rf /opt/tree \
- && rm -rf /opt/go
+COPY build/setup-go.sh /
+
+RUN /setup-go.sh
