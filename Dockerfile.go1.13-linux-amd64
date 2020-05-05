@@ -4,6 +4,7 @@ ENV GOPATH=/go \
     GOVERSION=1.13.10 \
     GOOS=linux \
     GOARCH=amd64 \
+    GOCACHE=/go \
     GOPROXY=direct \
     GOSUMDB=off \
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin
