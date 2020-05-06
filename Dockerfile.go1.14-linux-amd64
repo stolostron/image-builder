@@ -7,7 +7,7 @@ ENV GOPATH=/go \
     GOCACHE=/go \
     GOPROXY=direct \
     GOSUMDB=off \
-    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
 
 COPY build/* /usr/local/bin/
 
@@ -16,3 +16,4 @@ RUN setup-tree.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-go.sh
+RUN setup-kubebuilder.sh
