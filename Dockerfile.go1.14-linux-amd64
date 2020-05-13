@@ -16,4 +16,5 @@ RUN setup-tree.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-go.sh
+RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
