@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Install dependencies from yum
-yum install -y gcc
-yum clean all
-
 # Install tree command
 mkdir -p /opt/tree
 cd /opt/tree

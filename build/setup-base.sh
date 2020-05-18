@@ -5,6 +5,7 @@ yum install -y \
     bc \
     file \
     findutils \
+    gcc \
     gpgme \
     git \
     hostname \
