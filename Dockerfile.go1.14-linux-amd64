@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 ENV GOPATH=/go \
-    GOVERSION=1.14.7 \
+    GOVERSION=1.14.8 \
     GOOS=linux \
     GOARCH=amd64 \
     GOCACHE=/go \
