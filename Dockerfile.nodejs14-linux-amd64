@@ -1,0 +1,13 @@
+FROM registry.access.redhat.com/ubi8/ubi
+
+ENV NODE_VERSION=14 \
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
+
+COPY build/* /usr/local/bin/
+
+RUN setup-base.sh
+RUN setup-tree.sh
+RUN setup-jq.sh
+RUN setup-build-harness.sh
+RUN setup-sonar.sh
+RUN setup-node.sh
