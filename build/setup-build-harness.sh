@@ -9,7 +9,7 @@ mkdir -p $base
 cd $base
 
 git clone https://github.com/cloudposse/build-harness.git
-git clone https://github.com/open-cluster-management/build-harness-ext-osci.git "$bhe"
+git clone https://github.com/open-cluster-management/build-harness-extensions.git "$bhe"
 
 cp $bhe/templates/Makefile.build-harness-openshift-ci $base
 

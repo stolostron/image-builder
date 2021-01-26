@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 ENV GOPATH=/go \
-    GOVERSION=1.14.13 \
+    GOVERSION=1.14.14 \
     GOOS=linux \
     GOARCH=amd64 \
     GOCACHE=/go \
@@ -14,6 +14,7 @@ COPY build/* /usr/local/bin/
 RUN setup-base.sh
 RUN setup-tree.sh
 RUN setup-jq.sh
+RUN setup-oc.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-go.sh
