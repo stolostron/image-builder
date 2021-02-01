@@ -18,6 +18,7 @@ yum install -y \
     tar \
     util-linux \
     wget \
-    which
+    which \
+    yum-utils
 
 yum clean all
