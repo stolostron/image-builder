@@ -1,0 +1,10 @@
+{
+  "name": "@open-cluster-management/image-builder",
+  "description": "Simple package to resolve dependencies for creating a yarn builder",
+  "repository": "github.com/open-cluster-management/image-builder",
+  "version": "0.0.1",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "yarn": "^1.22.10"
+  }
+}
