@@ -1,6 +1,5 @@
 #!/bin/bash
-
-# Install Node and npm
-npm install --global yarn
-
-yum clean all
+package_location=$1
+# Install yarn
+cd $package_location
+npm install
