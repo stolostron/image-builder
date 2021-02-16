@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # Setup Node RPM Repository
-curl -sL https://rpm.nodesource.com/setup_$NODE_VERSION.x | bash -
+dnf module -y enable nodejs:$NODE_VERSION
 
 # Install Node and npm
-yum install -y nodejs
+dnf install -y nodejs
 
-yum clean all
+npm install --global yarn@$YARN_VERSION
+
+dnf clean
