@@ -1,0 +1,24 @@
+FROM registry.access.redhat.com/ubi8/ubi
+
+ENV GOPATH=/go \
+    GOVERSION=1.16 \
+    GOOS=linux \
+    GOARCH=amd64 \
+    GOCACHE=/go \
+    GOPROXY=direct \
+    GOSUMDB=off \
+    SONAR_USER_HOME=/opt/sonar/.sonar \
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
+
+COPY build/* /usr/local/bin/
+
+RUN setup-base.sh
+RUN setup-tree.sh
+RUN setup-jq.sh
+RUN setup-docker-cli.sh
+RUN setup-oc.sh
+RUN setup-build-harness.sh
+RUN setup-sonar.sh
+RUN setup-go.sh
+RUN setup-gosec.sh
+RUN setup-kubebuilder.sh
