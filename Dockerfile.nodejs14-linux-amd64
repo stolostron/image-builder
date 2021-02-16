@@ -5,6 +5,7 @@ ENV NODE_VERSION=14 \
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
 
 COPY build/* /usr/local/bin/
+COPY yarn-source /yarn-source
 
 RUN setup-base.sh
 RUN setup-tree.sh
@@ -14,3 +15,5 @@ RUN setup-oc.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-node.sh
+RUN setup-yarn.sh /yarn-source
+ENV PATH=$PATH:/yarn-source/node_modules/.bin
