@@ -6,6 +6,7 @@ dnf module -y enable nodejs:$NODE_VERSION
 # Install Node and npm
 dnf install -y nodejs
 
+# Install yarn
 npm install --global yarn@$YARN_VERSION
 
-dnf clean
+dnf clean all
