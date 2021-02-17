@@ -5,8 +5,6 @@ ENV GOPATH=/go \
     GOOS=linux \
     GOARCH=amd64 \
     GOCACHE=/go \
-    GOPROXY=direct \
-    GOSUMDB=off \
     SONAR_USER_HOME=/opt/sonar/.sonar \
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
 
