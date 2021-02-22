@@ -1,3 +1,1 @@
-When the `build-harness-extensions` repo is updated, increment this counter to trigger a new image builder build in OpenShift CI.
-
-0036
+open-cluster-management/build-harness-extensions@d370d41648fe07838ec9c29b147b272a405a492e
