@@ -6,6 +6,7 @@ yum install -y \
     file \
     findutils \
     gcc \
+    gcc-c++ \
     gpgme \
     git \
     hostname \
