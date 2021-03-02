@@ -16,3 +16,5 @@ cp $bhe/templates/Makefile.build-harness-openshift-ci $base/Makefile.prow
 
 rm -rf $bh/.git
 rm -rf $bhe/.git
+
+chmod -R a+rwx "$base"
