@@ -13,6 +13,7 @@ yum install -y \
     make \
     openssl \
     openssl-devel \
+    python38 \
     socat \
     systemd-devel \
     tar \
