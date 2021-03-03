@@ -3,6 +3,7 @@
 # Install dependencies from yum
 yum install -y \
     bc \
+    diffutils \
     file \
     findutils \
     gcc \
