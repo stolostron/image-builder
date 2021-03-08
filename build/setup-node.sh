@@ -2,7 +2,7 @@
 
 # Create node cache directory
 mkdir -p /opt/node/cache
-chmod -r a+rwx /opt/node
+chmod --recursive a+rwx /opt/node
 
 # Install Node and npm
 dnf module -y enable nodejs:$NODE_VERSION && dnf install -y nodejs
