@@ -10,6 +10,7 @@ COPY yarn-source /yarn-source
 RUN setup-base.sh
 RUN setup-tree.sh
 RUN setup-jq.sh
+RUN setup-yamllint.sh
 RUN setup-oc.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
