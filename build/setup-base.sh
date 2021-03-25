@@ -15,6 +15,7 @@ yum install -y \
     make \
     openssl \
     openssl-devel \
+    procps-ng \
     python38 \
     socat \
     systemd-devel \
