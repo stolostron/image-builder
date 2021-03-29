@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install kubebuilder
-export KBVERSION=2.2.0
+export KBVERSION=2.3.1
 mkdir -p /opt/kubebuilder
 cd /opt/kubebuilder
 wget -O kubebuilder.tgz --progress=dot:mega https://go.kubebuilder.io/dl/$KBVERSION/$GOOS/$GOARCH
