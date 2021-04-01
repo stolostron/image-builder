@@ -7,3 +7,7 @@ cd /opt/go
 wget --progress=dot:mega https://dl.google.com/go/go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz
 tar -C /usr/local -xzf go${GOVERSION}.${GOOS}-${GOARCH}.tar.gz
 rm -rf /opt/go
+if [ "$(uname -m)" = "s390x" ]; then
+        cd /usr/bin
+        ln gcc s390x-linux-gnu-gcc
+fi
