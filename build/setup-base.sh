@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install dependencies from yum
 yum install -y \
     bc \

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install build harness
 base=/opt/build-harness
 bh=$base/build-harness

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install gosec
 if [ "$(uname -m)" = "s390x" ]; then
         export PATH=$PATH:/usr/local/go/bin

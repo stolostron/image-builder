@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Create node cache directory
 mkdir -p /opt/node/cache
 chmod --recursive a+rwx /opt/node

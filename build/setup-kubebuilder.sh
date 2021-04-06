@@ -1,9 +1,27 @@
 #!/bin/bash
 
+set -e
+
 # Install kubebuilder
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+ARCH=$(uname -m)
+if [[ "$ARCH" == "x86_64" ]]; then
+    ARCH="amd64"
+fi
+
 export KBVERSION=2.3.1
 
-if [ "$(uname -m)" = "s390x" ]; then
+case "$ARCH" in
+    amd64)
+        mkdir -p /opt/kubebuilder
+        cd /opt/kubebuilder
+        wget -O kubebuilder.tgz --progress=dot:mega https://go.kubebuilder.io/dl/$KBVERSION/$OS/$ARCH
+        tar xf kubebuilder.tgz
+        mv kubebuilder_${KBVERSION}_${OS}_${ARCH} /usr/local/kubebuilder
+        cd /
+        rm -rf /opt/kubebuilder
+        ;;
+    s390x)
         export PATH=$PATH:/usr/local/go/bin
         export GOROOT=/usr/local/go
         export GOPATH=/go
@@ -11,15 +29,12 @@ if [ "$(uname -m)" = "s390x" ]; then
         wget -O kubebuilder.tar.gz --progress=dot:mega https://github.com/kubernetes-sigs/kubebuilder/archive/v$KBVERSION.tar.gz
         tar xf kubebuilder.tar.gz
         cd kubebuilder-$KBVERSION
-        CGO_ENABLED=0 GOOS=linux GOARCH=s390x go build -ldflags '-w -s' -o bin/kubebuilder ./cmd/
+        CGO_ENABLED=0 GOOS=$OS GOARCH=$ARCH go build -ldflags '-w -s' -o bin/kubebuilder ./cmd/
         cp bin/kubebuilder /usr/local/kubebuilder
         rm -rf /go/src/kubebuilder-$KBVERSION /go/src/kubebuilder.tar.gz
-elif [ "$(uname -m)" = "x86_64" ];  then
-        mkdir -p /opt/kubebuilder
-        cd /opt/kubebuilder
-        wget -O kubebuilder.tgz --progress=dot:mega https://go.kubebuilder.io/dl/$KBVERSION/$GOOS/$GOARCH
-        tar xf kubebuilder.tgz
-        mv kubebuilder_${KBVERSION}_${GOOS}_${GOARCH} /usr/local/kubebuilder
-        cd /
-        rm -rf /opt/kubebuilder
-fi
+        ;;
+    *)
+        echo "Unsupported architecture $ARCH"
+        exit 1
+        ;;
+esac
