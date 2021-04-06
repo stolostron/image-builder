@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install tree command
 mkdir -p /opt/tree
 cd /opt/tree

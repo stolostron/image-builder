@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install go
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m)

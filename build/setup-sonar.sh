@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 version="4.5.0.2216"
 sonar_file="sonar-scanner-cli-${version}-linux.zip"
 sonar_dir="sonar-scanner-${version}-linux"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Install kubectl and oc
 
 if [ "$(uname -m)" = "s390x" ]; then
