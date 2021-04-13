@@ -18,3 +18,4 @@ RUN setup-sonar.sh
 RUN setup-go.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
+RUN setup-terraform.sh
