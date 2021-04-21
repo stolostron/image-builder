@@ -7,7 +7,7 @@ ENV GOPATH=/go \
     PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
 
 COPY build/* /usr/local/bin/
-COPY kind/kind.tf /opt/kind/kind.tf
+COPY kind/* /opt/kind/
 
 RUN setup-base.sh
 RUN setup-tree.sh
