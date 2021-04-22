@@ -6,7 +6,7 @@ variable "aws_secret" {
 # Optional variables
 variable "aws_instance_type" {
   type = string
-  default = "t2.2xlarge"
+  default = "t3.xlarge"
 }
 
 variable "aws_region" {
