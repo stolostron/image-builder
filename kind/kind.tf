@@ -41,7 +41,7 @@ resource "aws_instance" "kind" {
   ami           = data.aws_ami.kind_image.id
   instance_type = var.aws_instance_type 
   key_name      = aws_key_pair.kind.key_name
-  vpc_security_group_ids = [ module.ssh_sg.this_security_group_id ]
+  vpc_security_group_ids = [ module.ssh_sg.security_group_id ]
 
   tags = {
     Name = "prow-kind-${random_id.suffix.hex}"
