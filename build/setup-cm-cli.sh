@@ -9,3 +9,4 @@ cd cm-cli
 make plugin
 cd /
 rm -rf /opt/cm-cli
+chmod -R a+rwx /go
