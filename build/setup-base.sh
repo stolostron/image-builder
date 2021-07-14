@@ -25,6 +25,7 @@ yum install -y \
     util-linux \
     wget \
     which \
+    xz \
     yum-utils
 
 yum clean all
