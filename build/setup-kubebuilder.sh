@@ -15,7 +15,7 @@ case "$ARCH" in
     amd64)
         mkdir -p /opt/kubebuilder
         cd /opt/kubebuilder
-        wget -O kubebuilder.tgz --progress=dot:mega https://go.kubebuilder.io/dl/$KBVERSION/$OS/$ARCH
+        wget -O kubebuilder.tgz --progress=dot:mega https://github.com/kubernetes-sigs/kubebuilder/releases/download/v${KBVERSION}/kubebuilder_${KBVERSION}_${OS}_${ARCH}.tar.gz
         tar xf kubebuilder.tgz
         mv kubebuilder_${KBVERSION}_${OS}_${ARCH} /usr/local/kubebuilder
         cd /
