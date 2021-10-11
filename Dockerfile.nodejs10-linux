@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 ENV NODE_VERSION=10 \
     GOPATH=/go \
-    GOVERSION=1.17.1 \
+    GOVERSION=1.17.2 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
     PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin:/yarn-source/node_modules/.bin
