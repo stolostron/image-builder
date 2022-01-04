@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 ENV GOPATH=/go \
-    GOVERSION=1.17.4 \
+    GOVERSION=1.17.5 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
     PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin
@@ -12,6 +12,7 @@ COPY kind/* /opt/kind/
 RUN setup-base.sh
 RUN setup-tree.sh
 RUN setup-jq.sh
+RUN setup-yq.sh
 RUN setup-yamllint.sh
 RUN setup-oc.sh
 RUN setup-httpd-tools.sh
