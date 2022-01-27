@@ -4,7 +4,7 @@ set -e
 
 # Install cm-cli plugin
 cd /opt
-git clone https://github.com/open-cluster-management/cm-cli.git
+git clone https://github.com/stolostron/cm-cli.git
 cd cm-cli
 make plugin
 cd /
