@@ -8,6 +8,7 @@ yum install -y \
     diffutils \
     file \
     findutils \
+    gettext \
     gcc \
     gcc-c++ \
     gpgme \
