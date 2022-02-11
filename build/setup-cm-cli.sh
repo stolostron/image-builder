@@ -12,7 +12,10 @@ fi
 wget --progress=dot:mega https://github.com/stolostron/cm-cli/releases/download/${CM_VERSION}/cm_${OS}_${ARCH}.tar.gz
 tar -C /tmp -xzf cm_${OS}_${ARCH}.tar.gz
 
-# Install cm-cli plugin
+# Spread cm-cli plugin around
 cp /tmp/cm ${GOPATH}/bin/oc-cm
-cp /tmp/cm ${GOPATH}/bin/kubectl-cm
+mv /tmp/cm ${GOPATH}/bin/kubectl-cm
 chmod -R a+rwx ${GOPATH}
+
+# Tidy up
+rm cm_${OS}_${ARCH}.tar.gz
