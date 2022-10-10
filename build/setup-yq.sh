@@ -6,7 +6,9 @@ set -e
 VERSION="v4.16.2"
 ARCH=$(uname -m)
 if [[ "$ARCH" == "x86_64" ]]; then
-    ARCH=amd64
+    ARCH="amd64"
+elif [[ "$ARCH" == "aarch64" ]]; then
+    ARCH="arm64"
 fi
 
 BINARY="yq_linux_$ARCH"
