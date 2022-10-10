@@ -7,6 +7,8 @@ OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m)
 if [[ "$ARCH" == "x86_64" ]]; then
     ARCH="amd64"
+elif [[ "$ARCH" == "aarch64" ]]; then
+    ARCH="arm64"
 fi
 
 wget --progress=dot:mega https://github.com/stolostron/cm-cli/releases/download/${CM_VERSION}/cm_${OS}_${ARCH}.tar.gz
