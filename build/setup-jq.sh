@@ -13,4 +13,6 @@ elif [ "$(uname -m)" = "x86_64" ];  then
         chmod +x jq-linux64
         mv jq-linux64 /usr/local/bin/jq
         rm -rf /opt/jq
+elif [ "$(uname -m)" = "aarch64" ];  then
+        dnf install -y jq
 fi
