@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ "$ARCH" == "aarch64" ]]; then
+if [[ "$(uname -m)" == "aarch64" ]]; then
     # Necessary workaround on ARM until this issue is resolved: https://github.com/hashicorp/terraform/issues/32008
 
     # Pull the latest terraform version from the file list at https://releases.hashicorp.com/terraform by selecting all versions, sorting, and selecting the latest/last.   
