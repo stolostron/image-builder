@@ -23,6 +23,7 @@ yum install -y \
     socat \
     systemd-devel \
     tar \
+    unzip \
     util-linux \
     wget \
     which \
