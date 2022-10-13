@@ -18,7 +18,7 @@ else
     # Folowing the documentation for RHEL/CentOS here - https://www.terraform.io/downloads
 
     # Add HashiCorp repo
-    yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    yum config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 
     # Install terraform
     yum install -y terraform
