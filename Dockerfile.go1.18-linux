@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 ENV GOPATH=/go \
-    GOVERSION=1.18.7 \
+    GOVERSION=1.18.8 \
     CM_VERSION=v1.0.9 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
