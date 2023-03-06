@@ -6,7 +6,7 @@ if [[ "$(uname -m)" == "aarch64" ]]; then
     # Necessary workaround on ARM until this issue is resolved: https://github.com/hashicorp/terraform/issues/32008
 
     # Pull the latest terraform version from the file list at https://releases.hashicorp.com/terraform by selecting all versions, sorting, and selecting the latest/last.   
-    LATEST_TF_VERSION=$(curl -X GET "https://releases.hashicorp.com/terraform" | sed -rn "s/.*terraform_([0-9]+\.[0-9]+\.[0-9]+).*/\1/p" | sort | tail -n 1)
+    LATEST_TF_VERSION=$(curl -X GET "https://releases.hashicorp.com/terraform" | sed -rn "s/.*terraform_([0-9]+\.[0-9]+\.[0-9]+)<.*/\1/p" | sort | tail -n 1)
 
     # Pull and extract terraform at the target version in /usr/local/bin
     cd /usr/local/bin
