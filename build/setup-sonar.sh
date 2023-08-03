@@ -2,14 +2,14 @@
 
 set -e
 
-version="4.5.0.2216"
+version="4.7.0.2747"
 sonar_file="sonar-scanner-cli-${version}-linux.zip"
 sonar_dir="sonar-scanner-${version}-linux"
 sonar_url="https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/$sonar_file"
 
 # Install dependencies from yum
 yum install -y \
-    java-11-openjdk-headless \
+    java-17-openjdk-headless \
     zip
 yum clean all
 
