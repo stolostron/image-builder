@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 ENV GOPATH=/go \
-    GOVERSION=1.20.2 \
+    GOVERSION=1.20.13 \
     CM_VERSION=v1.0.9 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
@@ -11,7 +11,6 @@ COPY build/* /usr/local/bin/
 COPY kind/* /opt/kind/
 
 RUN setup-base.sh
-RUN setup-tree.sh
 RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
