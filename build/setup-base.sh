@@ -19,7 +19,8 @@ yum install -y \
     openssl \
     openssl-devel \
     procps-ng \
-    python38 \
+    python3.12 \
+    python3.12-pip \
     socat \
     systemd-devel \
     tar \

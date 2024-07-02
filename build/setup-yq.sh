@@ -3,7 +3,7 @@
 set -e
 
 # Install yq command
-VERSION="v4.16.2"
+VERSION="v4.44.2"
 ARCH=$(uname -m)
 if [[ "$ARCH" == "x86_64" ]]; then
     ARCH="amd64"
