@@ -3,4 +3,4 @@
 set -e
 
 # Install yamllint
-pip3 install yamllint
+pip3.12 install yamllint
