@@ -2,8 +2,8 @@
 
 set -e
 
-package_location=$1
+package_location=${1}
 
 # Install yarn
-cd $package_location
+cd "${package_location}"
 npm install
