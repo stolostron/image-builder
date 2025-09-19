@@ -14,10 +14,10 @@ fi
 mkdir -p /go/{bin,pkg,src} /go/pkg/cache /opt/go
 chmod -R a+rwx /go
 cd /opt/go
-wget --progress=dot:mega https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-tar -C /usr/local -xzf go${GOVERSION}.${OS}-${ARCH}.tar.gz
+wget --progress=dot:mega "https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz"
+tar -C /usr/local -xzf "go${GOVERSION}.${OS}-${ARCH}.tar.gz"
 rm -rf /opt/go
-if [ "$ARCH" = "s390x" ]; then
+if [ "${ARCH}" = "s390x" ]; then
         cd /usr/bin
         ln gcc s390x-linux-gnu-gcc
 fi
