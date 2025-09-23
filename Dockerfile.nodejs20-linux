@@ -19,7 +19,6 @@ RUN setup-oc.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
-RUN setup-go.sh
 RUN setup-node.sh
 RUN setup-yarn.sh /yarn-source
 RUN cleanup-node.sh
