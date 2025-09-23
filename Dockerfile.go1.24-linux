@@ -10,6 +10,7 @@ COPY build/* /usr/local/bin/
 COPY kind/* /opt/kind/
 
 RUN setup-base.sh
+RUN setup-go.sh
 RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
@@ -17,7 +18,6 @@ RUN setup-oc.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
-RUN setup-go.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
 RUN setup-terraform.sh

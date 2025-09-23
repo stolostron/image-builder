@@ -11,6 +11,7 @@ COPY build/* /usr/local/bin/
 COPY yarn-source /yarn-source
 
 RUN setup-base.sh
+RUN setup-go.sh
 RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
@@ -18,7 +19,6 @@ RUN setup-oc.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
-RUN setup-go.sh
 RUN setup-node.sh
 RUN setup-yarn.sh /yarn-source
 RUN cleanup-node.sh
