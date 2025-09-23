@@ -18,8 +18,6 @@ RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-go.sh
-RUN setup-dep.sh
-RUN setup-cm-cli.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
 RUN setup-terraform.sh
