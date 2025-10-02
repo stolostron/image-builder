@@ -2,16 +2,15 @@
 
 set -e
 
-# Install yq command
-VERSION="v4.44.2"
-ARCH=$(uname -m)
-if [[ "$ARCH" == "x86_64" ]]; then
-    ARCH="amd64"
-elif [[ "$ARCH" == "aarch64" ]]; then
-    ARCH="arm64"
+module="github.com/mikefarah/yq/v4"
+
+# Get the latest version of yq
+go_mod=$(curl https://raw.githubusercontent.com/mikefarah/yq/refs/heads/master/go.mod)
+found_module=$(echo "${go_mod}" | awk '/module/ {print $2}')
+
+if [ "${found_module}" != "${module}" ]; then
+    echo "WARN: Currently using yq '${module##*/}'. Found new major version of yq '${found_module##*/}'."
 fi
 
-BINARY="yq_linux_$ARCH"
-
-wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O /usr/bin/yq
-chmod +x /usr/bin/yq
+# Install yq
+GOBIN=/usr/local/ go install "${module}@latest"
