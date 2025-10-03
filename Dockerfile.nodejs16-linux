@@ -10,7 +10,7 @@ COPY build/* /usr/local/bin/
 COPY yarn-source /yarn-source
 
 RUN setup-base.sh
-RUN GOVERSION=$(curl -s https://go.dev/VERSION?m=text | head -1 | sed 's/go//') \
+RUN GOVERSION=$(curl -s https://go.dev/VERSION?m=text | sed '1s/go//;q') \
     setup-go.sh
 RUN setup-jq.sh
 RUN setup-yq.sh
@@ -21,4 +21,5 @@ RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-node.sh
 RUN setup-yarn.sh /yarn-source
+RUN chmod -R a+rwx /go
 RUN cleanup-node.sh

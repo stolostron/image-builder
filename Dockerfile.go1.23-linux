@@ -21,3 +21,4 @@ RUN setup-sonar.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
 RUN setup-terraform.sh
+RUN chmod -R a+rwx /go
