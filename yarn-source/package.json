@@ -5,6 +5,6 @@
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.13"
   }
 }
