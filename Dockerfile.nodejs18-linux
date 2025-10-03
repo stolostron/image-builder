@@ -21,4 +21,5 @@ RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-node.sh
 RUN setup-yarn.sh /yarn-source
+RUN chmod -R a+rwx /go
 RUN cleanup-node.sh
