@@ -19,7 +19,7 @@ case "${ARCH}" in
                 dnf install -y jq
         ;;
         *)
-                wget "https://github.com/jqlang/jq/releases/latest/download/jq-linux-${ARCH}" -O /usr/bin/jq
+                wget --progress=dot:giga "https://github.com/jqlang/jq/releases/latest/download/jq-linux-${ARCH}" -O /usr/bin/jq
                 chmod +x /usr/bin/jq
         ;;
 esac

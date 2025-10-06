@@ -10,7 +10,7 @@ if [[ "$(uname -m)" == "aarch64" ]]; then
 
     # Pull and extract terraform at the target version in /usr/local/bin
     cd /usr/local/bin
-    wget "https://releases.hashicorp.com/terraform/${LATEST_TF_VERSION}/terraform_${LATEST_TF_VERSION}_linux_arm64.zip"
+    wget --progress=dot:giga "https://releases.hashicorp.com/terraform/${LATEST_TF_VERSION}/terraform_${LATEST_TF_VERSION}_linux_arm64.zip"
     unzip "terraform_${LATEST_TF_VERSION}_linux_arm64.zip"
     chmod +x terraform
     rm -f "terraform_${LATEST_TF_VERSION}_linux_arm64.zip"
