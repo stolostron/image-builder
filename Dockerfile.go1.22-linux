@@ -23,5 +23,6 @@ RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
+RUN setup-setup-envtest.sh
 RUN setup-terraform.sh
 RUN chmod -R a+rwx /{go,tmp}
