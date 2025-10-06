@@ -1,6 +1,7 @@
 FROM registry.access.redhat.com/ubi9/ubi
 
-ENV GOPATH=/go \
+ENV HOME=/tmp \
+    GOPATH=/go \
     GOVERSION=1.24.7 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
@@ -23,4 +24,4 @@ RUN setup-sonar.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
 RUN setup-terraform.sh
-RUN chmod -R a+rwx /go
+RUN chmod -R a+rwx /{go,tmp}

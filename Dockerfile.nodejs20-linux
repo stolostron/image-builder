@@ -1,6 +1,7 @@
 FROM registry.access.redhat.com/ubi9/ubi
 
 ENV NODE_VERSION=20 \
+    HOME=/tmp \
     GOPATH=/go \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
@@ -23,5 +24,5 @@ RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-node.sh
 RUN setup-yarn.sh /yarn-source
-RUN chmod -R a+rwx /go
+RUN chmod -R a+rwx /{go,tmp}
 RUN cleanup-node.sh
