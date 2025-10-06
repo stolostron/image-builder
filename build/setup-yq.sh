@@ -13,4 +13,4 @@ if [ "${found_module}" != "${module}" ]; then
 fi
 
 # Install yq
-GOBIN=/usr/local/ go install "${module}@latest"
+GOBIN=/usr/local/bin/ go install "${module}@latest"
