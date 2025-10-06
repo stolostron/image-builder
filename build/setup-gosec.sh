@@ -10,5 +10,5 @@ if [[ "${arch}" == "x86_64" ]] || [[ "${arch}" == "aarch64" ]]; then
 else
         git clone https://github.com/securego/gosec.git
         cd gosec
-        GOBIN=/usr/local/ go install ./cmd/gosec
+        GOBIN=/usr/local/bin go install ./cmd/gosec
 fi
