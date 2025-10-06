@@ -15,6 +15,7 @@ RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
 RUN setup-oc.sh
+RUN setup-clusteradm.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
