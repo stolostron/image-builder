@@ -13,6 +13,7 @@ COPY kind/* /opt/kind/
 RUN setup-base.sh
 RUN setup-go.sh
 RUN setup-jq.sh
+RUN check-go.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
 RUN setup-oc.sh
