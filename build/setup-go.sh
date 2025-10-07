@@ -13,7 +13,7 @@ fi
 
 mkdir -p /go/{bin,pkg,src} /go/pkg/cache /opt/go
 cd /opt/go
-wget --progress=dot:mega "https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz"
+wget --progress=dot:giga "https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz"
 tar -C /usr/local -xzf "go${GOVERSION}.${OS}-${ARCH}.tar.gz"
 rm -rf /opt/go
 if [ "${ARCH}" = "s390x" ]; then

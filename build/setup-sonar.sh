@@ -16,7 +16,7 @@ yum clean all
 
 # Install sonar scanner
 cd /opt
-wget --progress=dot:mega "${sonar_url}"
+wget --progress=dot:giga "${sonar_url}"
 unzip "${sonar_file}"
 rm "${sonar_file}"
 mv "${sonar_dir}" sonar

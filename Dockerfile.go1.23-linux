@@ -1,6 +1,7 @@
 FROM registry.access.redhat.com/ubi9/ubi
 
-ENV GOPATH=/go \
+ENV HOME=/tmp \
+    GOPATH=/go \
     GOVERSION=1.23.12 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
@@ -15,10 +16,13 @@ RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
 RUN setup-oc.sh
+RUN setup-cm-cli.sh
+RUN setup-clusteradm.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
 RUN setup-sonar.sh
 RUN setup-gosec.sh
 RUN setup-kubebuilder.sh
+RUN setup-setup-envtest.sh
 RUN setup-terraform.sh
-RUN chmod -R a+rwx /go
+RUN chmod -R a+rwx /{go,tmp}

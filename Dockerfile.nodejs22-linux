@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi9/ubi
 
-ENV NODE_VERSION=20 \
+ENV NODE_VERSION=22 \
     HOME=/tmp \
     GOPATH=/go \
     GOCACHE=/go/pkg/cache \
@@ -17,7 +17,6 @@ RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh
 RUN setup-oc.sh
-RUN setup-cm-cli.sh
 RUN setup-clusteradm.sh
 RUN setup-httpd-tools.sh
 RUN setup-build-harness.sh
