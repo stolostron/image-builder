@@ -2,7 +2,8 @@
 
 set -e
 
-SONAR_VERSION="7.2.0.5079"
+# https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/scanners/sonarscanner
+SONAR_VERSION="8.0.1.6346"
 
 sonar_file="sonar-scanner-cli-${SONAR_VERSION}-linux-x64.zip"
 sonar_dir="sonar-scanner-${SONAR_VERSION}-linux-x64"
