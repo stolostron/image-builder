@@ -16,7 +16,16 @@ module "ssh_sg" {
   description = "Prow KinD SG: allows inboud ssh from everywhere"
   vpc_id = data.aws_vpc.default.id
   
-  ingress_cidr_blocks =["0.0.0.0/0"]
+  ingress_cidr_ipv4 = {
+    vpc = "0.0.0.0/0"
+  }
+
+  egress_rules = {
+    all = {
+      ip_protocol = "-1"
+      cidr_ipv4   = "0.0.0.0/0"
+    }
+  }
 }
 
 # Create the key pair for use with ssh
@@ -41,7 +50,7 @@ resource "aws_instance" "kind" {
   ami           = data.aws_ami.kind_image.id
   instance_type = var.aws_instance_type 
   key_name      = aws_key_pair.kind.key_name
-  vpc_security_group_ids = [ module.ssh_sg.security_group_id ]
+  vpc_security_group_ids = [ module.ssh_sg.id ]
 
   tags = {
     Name = "prow-kind-${random_id.suffix.hex}"
