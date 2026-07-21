@@ -11,7 +11,7 @@ sonar_url="https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/${son
 
 # Install dependencies from yum
 yum install -y \
-    java-17-openjdk-headless \
+    java-21-openjdk-headless \
     zip
 yum clean all
 
