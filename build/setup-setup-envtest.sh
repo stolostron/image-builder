@@ -21,4 +21,10 @@ setup-envtest use
 
 # Place binaries in the PATH
 mkdir -p /usr/local/kubebuilder/bin
-cp "$(setup-envtest use -p path)/"* /usr/local/kubebuilder/bin/
+
+if envtest_path="$(setup-envtest use -p path)"; then
+    cp "${envtest_path}/"* /usr/local/kubebuilder/bin/
+else
+    echo "error: setup-envtest failed to fetch envtest binaries"
+    exit 1
+fi
