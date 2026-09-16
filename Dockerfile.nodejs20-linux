@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/ubi9/ubi
 ENV NODE_VERSION=20 \
     HOME=/tmp \
     GOPATH=/go \
+    GOVERSION=1.26.8 \
     GOCACHE=/go/pkg/cache \
     SONAR_USER_HOME=/opt/sonar/.sonar \
     PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/opt/sonar/bin:/usr/local/kubebuilder/bin:/yarn-source/node_modules/.bin
@@ -11,8 +12,7 @@ COPY build/* /usr/local/bin/
 COPY yarn-source /yarn-source
 
 RUN setup-base.sh
-RUN GOVERSION=$(curl -s https://go.dev/VERSION?m=text | sed '1s/go//;q') \
-    setup-go.sh
+RUN setup-go.sh
 RUN setup-jq.sh
 RUN setup-yq.sh
 RUN setup-yamllint.sh

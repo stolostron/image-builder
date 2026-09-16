@@ -7,5 +7,6 @@ if [[ -z "${parsed_version}" ]]; then
     echo "INFO: Go ${GOVERSION} is no longer supported."
 elif [[ ${parsed_version} != "go${GOVERSION}" ]]; then
     echo "ERROR: Found Go version '${GOVERSION}', but it's not the latest. Set to GOVERSION to '${parsed_version#go}'."
+    echo "  Run './build/update-go.sh' to update the Go version."
     exit 1
 fi
